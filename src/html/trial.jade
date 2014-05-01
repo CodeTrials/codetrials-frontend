@@ -1,0 +1,27 @@
+doctype html
+html
+    head
+        include head
+    body
+        include navbar
+        div.container
+            div.row
+                div.col-md-4
+                    div.jumbotron
+                        div.progress
+                            div.progress-bar(role='progressbar', aria-valuenow='2', aria-valuemin='0', aria-valuemax='20', style='width: 10%; min-width: 40px; ')
+                                | 2/20
+                        h3=step.title
+                        p=step.desc
+                div.col-md-8
+                    div#console
+
+
+        include footer
+
+        script(src='https://raw.githubusercontent.com/chrisdone/jquery-console/master/jquery.console.js')
+        script.
+            $("#console").console({
+                promtLabel: "> ",
+
+            });

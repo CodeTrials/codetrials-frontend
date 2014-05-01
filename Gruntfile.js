@@ -17,7 +17,8 @@ module.exports = function(grunt) {
 					}
 				},
 				files: {
-					'build/html/index.html': 'src/html/index.jade'
+					'build/html/index.html': 'src/html/index.jade',
+                    'build/html/trial.html': 'src/html/trial.jade'
 				}
 			}
 		},
@@ -46,8 +47,8 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 
-	grunt.registerTask('html', ['clean:html', 'jade'])
-	grunt.registerTask('css', ['clean:css', 'less'])
-	grunt.registerTask('build', ['css', 'html'])
-	grunt.registerTask('default', ['build', 'watch'])
-}
+	grunt.registerTask('html', ['clean:html', 'jade']);
+	grunt.registerTask('css', ['clean:css', 'less']);
+	grunt.registerTask('build', ['css', 'html']);
+	grunt.registerTask('default', ['build', 'watch']);
+};
