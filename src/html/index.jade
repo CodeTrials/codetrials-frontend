@@ -1,5 +1,51 @@
 doctype html
-head
-	title Index
-body
-	h1 Hello World!
+html
+    head
+        meta(charset="utf-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1")
+        title Bootstrap 101 Template
+
+        link(href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css", rel="stylesheet")
+        link(href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css", rel="stylesheet")
+        link(href="../css/main.css", rel="stylesheet")
+
+        | <!--[if lt IE 9]>
+        script(src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js")
+        script(src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js")
+        | <![endif]-->
+
+    body
+        div.container
+            nav.navbar.navbar-default(role="navigation")
+                div.container-fluid
+                    - var collapseId = genId();
+                    div.navbar-header
+                        button.navbar-toggle(data-toggle="collapse", data-target="##{collapseId}")
+                            span.sr-only Toggle navigation
+                            span.icon-bar
+                            span.icon-bar
+                            span.icon-bar
+                        a.navbar-brand(href="#") CodeTrials
+                    div.collapse.navbar-collapse(id=collapseId)
+                        ul.nav.navbar-nav
+                            li.dropdown
+                                a.dropdown-toggle(data-toggle='dropdown', href='#') Pick trial
+                                    b.caret
+                                ul.dropdown-menu
+                                    each trial in trials
+                                        li: a(href='#')= trial.title
+                        button.btn.btn-success.navbar-btn.navbar-right Add trial
+            h1.text-center Choose your trial!
+            div#trials.row
+                each trial in trials
+                    div.col-md-3
+                        div.panel.panel-default
+                            div.panel-body
+                                h3.text-center=trial.title
+                                p=trial.desc
+                                p: button.btn.btn-default.btn-block Try
+
+
+        script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js")
+        script(src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js")
