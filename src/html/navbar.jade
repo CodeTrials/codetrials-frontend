@@ -2,18 +2,9 @@ nav.navbar.navbar-default.navbar-static-top(role="navigation")
     div.container
         - var collapseId = genId();
         div.navbar-header
-            button.navbar-toggle(data-toggle="collapse", data-target="##{collapseId}")
-                span.sr-only Toggle navigation
-                span.icon-bar
-                span.icon-bar
-                span.icon-bar
             a.navbar-brand(href="index.html") CodeTrials
-        div.collapse.navbar-collapse(id=collapseId)
-            ul.nav.navbar-nav
-                li.dropdown
-                    a.dropdown-toggle(data-toggle='dropdown', href='#') Pick trial
-                        b.caret
-                    ul.dropdown-menu
-                        each trial in trials
-                            li: a(href='trial.html')= trial.title
-            button.btn.btn-success.navbar-btn.navbar-right Add trial
+        ul.nav.navbar-nav
+            li.dropdown
+                a.dropdown-toggle(data-toggle='dropdown', href='#') Pick trial
+                    b.caret
+        a.btn.btn-success.navbar-btn.navbar-right(href='form.html') Add trial

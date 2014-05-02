@@ -18,7 +18,8 @@ module.exports = function(grunt) {
 				},
 				files: {
 					'build/html/index.html': 'src/html/index.jade',
-                    'build/html/trial.html': 'src/html/trial.jade'
+                    'build/html/trial.html': 'src/html/trial.jade',
+                    'build/html/form.html': 'src/html/form.jade'
 				}
 			}
 		},
